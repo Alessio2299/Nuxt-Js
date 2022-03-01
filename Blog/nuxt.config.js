@@ -3,7 +3,7 @@ export default {
   head: {
     title: 'Blog',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'it'
     },
     meta: [
       { charset: 'utf-8' },
