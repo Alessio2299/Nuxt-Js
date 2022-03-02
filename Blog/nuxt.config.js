@@ -3,7 +3,7 @@ export default {
   head: {
     title: 'Blog',
     htmlAttrs: {
-      lang: 'it'
+      lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
@@ -33,6 +33,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    // https://go.nuxtjs.dev/bootstrap
+    'bootstrap-vue/nuxt',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
