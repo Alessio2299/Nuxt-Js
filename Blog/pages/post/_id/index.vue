@@ -1,11 +1,18 @@
 <template>
-  <div class="post">
-    <h1>post {{$route.params.id}}</h1>
+  <div>
+    <HeaderBlog />
+    <div class="post">
+      <h1>post {{$route.params.id}}</h1>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'PostId'
-}
+  import HeaderBlog from "~/components/HeaderBlog.vue"
+  export default {
+    name: 'PostId',
+    components:{
+      HeaderBlog
+    }
+  }
 </script>
