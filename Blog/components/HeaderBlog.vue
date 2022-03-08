@@ -8,7 +8,7 @@
               <nuxt-link class="text-white inline-block py-2 px-2 no-underline hover:text-gray" to="/">HOME</nuxt-link>
             </li>
             <li class="mr-2">
-              <nuxt-link class="text-white inline-block no-underline hover:text-gray py-2 px-2" to="/post">POST</nuxt-link>
+              <nuxt-link class="text-white inline-block no-underline hover:text-gray py-2 px-2" to="/post">POSTS</nuxt-link>
             </li>
             <li class="mr-2">
               <nuxt-link class="text-white inline-block no-underline hover:text-gray py-2 px-2" to="/about">ABOUT</nuxt-link>
@@ -20,6 +20,8 @@
             <img class="icon" src="~/static/GitHub_logo.png" alt="GitHub Alessio2299">
           </a>
         </div>
+      </div>
+      <div class="my_bg w-full h-96 bg-cover bg-center m-0 p-0">
       </div>    
 		</nav>
   </div>
@@ -34,5 +36,8 @@
 <style scoped>
   .icon{
     width: 20px;
+  }
+  .my_bg{
+    background-image: url("~/static/bg_image.jpeg");
   }
 </style>
