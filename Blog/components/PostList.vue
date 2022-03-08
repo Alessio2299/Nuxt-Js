@@ -1,15 +1,20 @@
 <template>
-  <div class="flex flex-wrap justify-between pt-12 mx-6">
-    <PostPreview
-      v-for="(post,index) in posts.slice(start,last)" :key="index"
-      :id="post.id"
-      :thumbnail="post.thumbnail"
-      :title="post.title"
-      :description="post.description"
-      :userImg="post.userImg"
-      :timeToRead="post.timeToRead"
-      :dimension="post.dimension"
-    />
+  <div>
+    <div v-if="posts.length > 0" class="posts flex flex-wrap justify-between pt-12 mx-6">
+      <PostPreview
+        v-for="(post,index) in posts.slice(start,last)" :key="index"
+        :id="post.id"
+        :thumbnail="post.thumbnail"
+        :title="post.title"
+        :description="post.description"
+        :userImg="post.userImg"
+        :timeToRead="post.timeToRead"
+        :dimension="post.dimension"
+      />
+    </div>
+    <div v-else>
+      <span class="text-3xl">Non è presente nessun post</span>
+    </div>
   </div>
 </template>
 <script>

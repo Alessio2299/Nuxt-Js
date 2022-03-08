@@ -2,7 +2,7 @@
   <div>
     <HeaderBlog />
     <div class="container px-4 md:px-0 max-w-6xl mx-auto -mt-20">
-      <h1 class="text-white uppercase text-5xl">Posts</h1>
+      <h1 class="text-white uppercase text-5xl pb-5">Posts</h1>
       <PostList 
         type="all"
       />
