@@ -1,8 +1,7 @@
 <template>
   <div>
-    <HeaderBlog />
     <div class="container px-4 md:px-0 max-w-6xl mx-auto -mt-20">
-      <h1 class="text-white uppercase text-5xl pb-5">Posts</h1>
+      <h1 class="text-white uppercase text-5xl ml-3 pb-5">Posts</h1>
       <PostList 
         type="all"
       />
@@ -12,7 +11,6 @@
 
 <script>
   import PostList from "~/components/PostList.vue"
-  import HeaderBlog from "~/components/HeaderBlog.vue"
 
   export default {
     name: 'Post',
@@ -24,7 +22,6 @@
     },
     components:{
       PostList,
-      HeaderBlog
     }
   }
 </script>

@@ -1,7 +1,11 @@
 <template>
   <div>
     <nav class="bg-black mt-0 w-full">
-      <div class="container mx-auto flex items-center">
+      <NavSide
+        @close="show = !show"
+        :show="show"
+      />
+      <div class="nav-bar container mx-auto flex items-center">
         <div class="flex w-1/2 pl-4 text-sm">
           <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
             <li class="mr-2">
@@ -21,6 +25,9 @@
           </a>
         </div>
       </div>
+      <div class="menu-hamburgher container mx-auto flex ml-4 items-center">
+        <i @click="show = !show" class="close m-2 text-white text-3xl fas fa-bars"></i>
+      </div>
       <div class="my_bg w-full h-96 bg-cover bg-center m-0 p-0">
       </div>    
 		</nav>
@@ -28,8 +35,18 @@
 </template>
 
 <script>
+  import NavSide from "~/components/Nav/NavSide.vue"
+
   export default {
     name: 'HeaderBlog',
+    data(){
+      return{
+        show: false
+      }
+    },
+    components:{
+      NavSide
+    }
   }
 </script>
 
@@ -39,5 +56,19 @@
   }
   .my_bg{
     background-image: url("~/static/bg_image.jpeg");
+  }
+  .nav-bar{
+    display: none;
+  }
+  .close{
+    cursor: pointer;
+  }
+  @media screen and (min-width: 800px){
+    .nav-bar{
+      display: flex;
+    }
+    .menu-hamburgher{
+      display: none;
+    }
   }
 </style>
