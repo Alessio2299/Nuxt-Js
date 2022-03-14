@@ -19,7 +19,8 @@
             </li>
           </ul>
         </div>
-        <div class="flex w-1/2 justify-end content-center">
+        <div class="flex w-1/2 items-center justify-end content-center">
+              <nuxt-link class="text-white inline-block no-underline hover:text-gray py-2 px-2" to="/admin">ADMIN</nuxt-link>
           <a class="inline-block no-underline text-center h-10 p-2 md:h-auto md:p-4 avatar" target="_blank" href="https://github.com/Alessio2299">
             <img class="icon" src="~/static/GitHub_logo.png" alt="GitHub Alessio2299">
           </a>
