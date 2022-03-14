@@ -10,6 +10,7 @@
         :userImg="post.userImg"
         :timeToRead="post.timeToRead"
         :dimension="post.dimension"
+        :isAdmin="admin"
       />
     </div>
     <div v-else>
@@ -29,6 +30,9 @@
       type:{
         type: String,
         required: true
+      },
+      admin:{
+        type: Boolean
       }
     },
     data(){
