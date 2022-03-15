@@ -12,7 +12,7 @@
               <nuxt-link class="text-white inline-block py-2 px-2 no-underline hover:text-gray" to="/">HOME</nuxt-link>
             </li>
             <li class="mr-2">
-              <nuxt-link class="text-white inline-block no-underline hover:text-gray py-2 px-2" to="/post">POSTS</nuxt-link>
+              <nuxt-link class="text-white inline-block no-underline hover:text-gray py-2 px-2" to="/posts">POSTS</nuxt-link>
             </li>
             <li class="mr-2">
               <nuxt-link class="text-white inline-block no-underline hover:text-gray py-2 px-2" to="/about">ABOUT</nuxt-link>

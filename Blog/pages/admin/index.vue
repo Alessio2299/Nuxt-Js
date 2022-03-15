@@ -25,7 +25,7 @@
     },
     methods:{
       newPage(){
-        this.$router.push('/admin/newPost');
+        this.$router.push('/admin/post/newPost');
       }
     }
   }

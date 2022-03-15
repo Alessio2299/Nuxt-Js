@@ -13,7 +13,7 @@
         <p class="text-gray-600 text-xs md:text-sm">{{timeToRead}}</p>
       </div>
     </div>
-    <button v-if="isAdmin" class=" w-2/5 m-auto mt-3 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+    <button v-if="isAdmin" @click="toEdit" class=" w-2/5 m-auto mt-3 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
         Edit
     </button>
   </div>
@@ -25,6 +25,11 @@ export default {
   data(){
     return{
 
+    }
+  },
+  methods:{
+    toEdit(){
+      this.$router.push('/admin/post/_postid');
     }
   },
   props:{
