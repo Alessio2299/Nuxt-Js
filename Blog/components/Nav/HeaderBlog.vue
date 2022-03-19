@@ -9,18 +9,19 @@
         <div class="flex w-1/2 pl-4 text-sm">
           <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
             <li class="mr-2">
-              <nuxt-link class="text-white inline-block py-2 px-2 no-underline hover:text-gray" to="/">HOME</nuxt-link>
+              <nuxt-link class="text-white uppercase inline-block py-2 px-2 no-underline hover:text-gray" to="/">Home</nuxt-link>
             </li>
             <li class="mr-2">
-              <nuxt-link class="text-white inline-block no-underline hover:text-gray py-2 px-2" to="/posts">POSTS</nuxt-link>
+              <nuxt-link class="text-white uppercase inline-block no-underline hover:text-gray py-2 px-2" to="/posts">Posts</nuxt-link>
             </li>
             <li class="mr-2">
-              <nuxt-link class="text-white inline-block no-underline hover:text-gray py-2 px-2" to="/about">ABOUT</nuxt-link>
+              <nuxt-link class="text-white uppercase inline-block no-underline hover:text-gray py-2 px-2" to="/about">About</nuxt-link>
             </li>
           </ul>
         </div>
         <div class="flex w-1/2 items-center justify-end content-center">
-              <nuxt-link class="text-white inline-block no-underline hover:text-gray py-2 px-2" to="/admin">ADMIN</nuxt-link>
+              <nuxt-link class="text-white uppercase inline-block no-underline hover:text-gray py-2 px-2" to="/admin">Admin</nuxt-link>
+              <nuxt-link class="text-white uppercase inline-block no-underline hover:text-gray py-2 px-2" to="/admin/auth">Login</nuxt-link>
           <a class="inline-block no-underline text-center h-10 p-2 md:h-auto md:p-4 avatar" target="_blank" href="https://github.com/Alessio2299">
             <img class="icon" src="~/static/GitHub_logo.png" alt="GitHub Alessio2299">
           </a>
