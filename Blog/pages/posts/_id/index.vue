@@ -10,12 +10,8 @@
   export default {
     name: 'PostId',
     fetch({ store }){
-      
     },
     computed:{
-      currentPost(){
-        return this.$store.getters.getPost;
-      }
     }
   }
 </script>

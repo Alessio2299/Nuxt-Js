@@ -16,7 +16,6 @@
     name: 'IndexPage',
     data(){
       return{
-        prova: "Ciao"
       }
     },
     components:{
