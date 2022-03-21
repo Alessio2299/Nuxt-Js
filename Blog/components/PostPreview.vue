@@ -1,7 +1,7 @@
 <template>
   <div :class="`w-full md:w-${dimension} p-6 flex flex-col flex-grow flex-shrink`">
     <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-      <nuxt-link :to="`/post/${id}`" class="flex flex-wrap no-underline hover:no-underline">
+      <nuxt-link :to="`/posts/${id}`" class="flex flex-wrap no-underline hover:no-underline">
         <img :src="thumbnail" :class="`h-${dimension} w-full rounded-t pb-6`">
         <div class="w-full font-bold text-xl text-gray-900 px-6">{{title}}</div>
         <p class="text-gray-800 font-serif text-base px-6 mb-5">{{description}}</p>

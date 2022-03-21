@@ -3,23 +3,41 @@ import Vuex from 'vuex'
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      prova: {
+      post: {
 
       }
     },
     mutations:{
-      setProva(state,arr){
-        state.prova = arr;
+      setPost(state,post){
+        state.post = post;
       }
     },
     actions:{
-      actionProva(context, arr){
-        context.commit("setProva", arr)
+      nuxtServerInit(context){
+        return new Promise((resolve,reject) => {
+          setTimeout(() => {
+            context.commit("setPost",{
+              postApi: {
+                dimension: "1/3",
+                id: "PostApi",
+                title: "Lorem ipsum dolor sit amet.",
+                thumbnail: "postApi",
+                description: "postApi",
+                userImg: "PostAPi",
+                timeToRead: "1 MIN READ"
+              }
+            })
+            resolve();
+          },2000)
+        })
+      },
+      actionPost(context, post){
+        context.commit("setPost", post)
       }
     },
     getters:{
-      getProva(state){
-        return state.prova;
+      getPost(state){
+        return state.post;
       }
     }
   })

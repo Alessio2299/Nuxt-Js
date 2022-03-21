@@ -23,9 +23,6 @@
       }
     },
     components:{
-    },
-    mounted(){
-      this.prova = this.$store.getters.getProva;
     }
   }
 </script>

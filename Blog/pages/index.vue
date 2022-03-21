@@ -21,9 +21,6 @@
     },
     components:{
       PostList
-    },
-    mounted(){
-      this.$store.dispatch("actionProva", this.prova)
     }
   }
 </script>

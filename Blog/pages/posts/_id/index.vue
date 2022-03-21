@@ -9,7 +9,13 @@
 <script>
   export default {
     name: 'PostId',
-    components:{
+    fetch({ store }){
+      
+    },
+    computed:{
+      currentPost(){
+        return this.$store.getters.getPost;
+      }
     }
   }
 </script>
