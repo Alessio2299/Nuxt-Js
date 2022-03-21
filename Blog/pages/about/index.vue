@@ -17,7 +17,15 @@
 
   export default {
     name: 'About',
+    data(){
+      return{
+        prova:""
+      }
+    },
     components:{
+    },
+    mounted(){
+      this.prova = this.$store.getters.getProva;
     }
   }
 </script>

@@ -16,10 +16,14 @@
     name: 'IndexPage',
     data(){
       return{
+        prova: "Ciao"
       }
     },
     components:{
       PostList
+    },
+    mounted(){
+      this.$store.dispatch("actionProva", this.prova)
     }
   }
 </script>
