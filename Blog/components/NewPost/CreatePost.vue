@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="form p-5 relative flex flex-col text-black mt-10 rounded-lg">
+    <div  class="form p-5 relative flex flex-col text-black mt-10 rounded-lg">
       <input class="mb-5" type="text" v-model="newPost.title" placeholder="Title">
       <input class="mb-5" type="text" v-model="newPost.image" placeholder="Thumbnail">
       <input class="mb-5" type="text" v-model="newPost.userImg" placeholder="User Image">
@@ -23,6 +23,12 @@
 
   export default {
     name: 'CreatePost',
+    props:{
+      post:{
+        type: Object,
+        required : false
+      }
+    },
     data(){
       return{
         newPost: this.post ? { ...this.post } : 
@@ -38,6 +44,7 @@
     },
     components:{
     },
+    
     methods:{
       cancel(){
         this.$router.push("/admin")
@@ -67,8 +74,8 @@
     width: 15px;
     background-color: black;
     position: absolute;
-    bottom: 85%;
-    left: 5px;
+    bottom: 89%;
+    left: 1px;
   }
   .form::before{
     content: "";
@@ -77,7 +84,8 @@
     width: 15px;
     background-color: black;
     position: absolute;
-    bottom: 85%;
-    right: 5px;
+    bottom: 89%;
+    right: 1px;
   }
+
 </style>
