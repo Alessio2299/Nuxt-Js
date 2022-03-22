@@ -23,6 +23,7 @@ import axios from 'axios'
         .then(result => console.log(result))
         .catch(error => console.log(error))
         console.log(newPost)
+        this.$router.push('/');
       }
     }
   }

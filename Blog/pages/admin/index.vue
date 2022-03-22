@@ -9,7 +9,7 @@
       </div>
       <h2 class="ml-5 uppercase font-semibold text-2xl">My Posts</h2>
       <PostList 
-        type="principal"
+        type="all"
         admin
       />
     </div>
