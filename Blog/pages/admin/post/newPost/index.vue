@@ -30,7 +30,7 @@ import axios from 'axios'
     methods:{
       saveNewPost(newPost){
         this.loading = true;
-        axios.post("https://nuxt-blog-60810-default-rtdb.firebaseio.com/posts.json",newPost)
+        this.$store.dispatch('addPost', newPost)
         .then(result => {
           console.log(result)
           this.loading = false;

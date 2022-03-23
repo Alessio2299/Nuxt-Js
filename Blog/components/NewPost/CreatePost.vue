@@ -9,7 +9,7 @@
       <input class="mb-5" v-model="newPost.timeToRead" type="number" min="1" max="60" placeholder="Time to Read">
       <div class="btn">
         <button @click="save" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-          Create
+          {{edit ? 'Save' : 'Create'}}
         </button>
         <button @click="cancel" class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded">
           Cancel
@@ -26,6 +26,10 @@
     props:{
       post:{
         type: Object,
+        required : false
+      },
+      edit:{
+        type : Boolean,
         required : false
       }
     },
@@ -50,7 +54,6 @@
         this.$router.push("/admin")
       },
       save(){
-        // console.log(this.newPost);
         this.$emit("savePost", this.newPost);
       }
     }

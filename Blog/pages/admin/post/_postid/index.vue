@@ -1,11 +1,11 @@
 <template>
   <div class="pt-12 pb-12 text-center w-2/5 m-auto">
-    <h2 class="text-2xl uppercase">Edit Post</h2>
+    <h2 class="text-2xl uppercase">Edit Post {{this.$route.params.postid}}</h2>
     <div v-if="loading">
       <i class="my-10 fas fa-spinner"></i>  
       <h2>Loading in progress..</h2>
     </div>
-    <CreatePost :post="editPost" v-if="!loading && save == false" @savePost="saveNewPost"/>
+    <CreatePost :post="editPost" :edit="true" v-if="!loading && save == false" @savePost="editNewPost"/>
     <div v-if="save">
       <i class="my10 fas fa-check"></i>
       <h2>Loading Complete</h2>
@@ -26,8 +26,7 @@
       }
     },
     asyncData(context){
-      console.log('ok');
-      return axios.get(`https://nuxt-blog-60810-default-rtdb.firebaseio.com/posts/${context.params.id}.json`)
+      return axios.get(`https://nuxt-blog-60810-default-rtdb.firebaseio.com/posts/${context.params.postid}.json`)
       .then(res => {
         console.log(res);
         return {
@@ -42,9 +41,9 @@
       CreatePost
     },
     methods:{
-      saveNewPost(newPost){
+      editNewPost(newPost){
         this.loading = true;
-        axios.post("https://nuxt-blog-60810-default-rtdb.firebaseio.com/posts.json",newPost)
+        axios.put(`https://nuxt-blog-60810-default-rtdb.firebaseio.com/posts/${this.$route.params.postid}.json`,newPost)
         .then(result => {
           console.log(result)
           this.loading = false;
