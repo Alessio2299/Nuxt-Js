@@ -44,6 +44,7 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
     name: 'Auth',
     data(){
@@ -59,7 +60,36 @@
     },
     methods:{
       send(){
-        console.log(this.user)
+        let urlAuth = process.env.urlAuth;
+        let body = {};
+        if (this.isLogin){
+          console.log(urlAuth);
+          urlAuth = urlAuth + "accounts:signInWithPassword?key=" + process.env.apiKey;
+          body = {
+            email : this.user.email,
+            password : this.user.password,
+            returnSecureToken : true
+          }
+        } else{
+          console.log(urlAuth);
+          urlAuth = urlAuth + "accounts:signUp?key=" + process.env.apiKey;
+          body = {
+            name : this.user.name,
+            lastname : this.user.lastname,
+            email : this.user.email,
+            password : this.user.password,
+            returnSecureToken : true
+          }
+        }
+        axios.post(urlAuth, body)
+        .then(resp => {
+          console.log(resp.data.idToken)
+          console.log(body)
+          console.log(urlAuth)
+        })
+        .catch(error => { 
+          console.log(error)
+        })        
       }
     }
   }

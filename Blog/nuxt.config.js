@@ -1,3 +1,5 @@
+import authMiddleware from "./middleware/authMiddleware";
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -36,7 +38,13 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
   ],
-
+  router:{
+    middleware: 'authMiddleware'
+  },
+  env:{
+    apiKey: 'AIzaSyCN_tzyBVUt7qzyKrziooNcryQVtjJad2I',
+    urlAuth: 'https://identitytoolkit.googleapis.com/v1/'
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
   ],
