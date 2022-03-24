@@ -38,9 +38,6 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
   ],
-  router:{
-    middleware: 'authMiddleware'
-  },
   env:{
     apiKey: 'AIzaSyCN_tzyBVUt7qzyKrziooNcryQVtjJad2I',
     urlAuth: 'https://identitytoolkit.googleapis.com/v1/'

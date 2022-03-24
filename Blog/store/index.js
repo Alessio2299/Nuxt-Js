@@ -5,6 +5,7 @@ import axios from 'axios';
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      idToken : null,
       posts: []
     },
     mutations:{
@@ -13,6 +14,9 @@ const createStore = () => {
       },
       newPost(state, newPost){
         state.posts.push(newPost);
+      },
+      setToken(state,idToken){
+        state.idToken = idToken
       }
     },
     actions:{
@@ -28,7 +32,7 @@ const createStore = () => {
         .catch(error => console.log(error));
       },
       addPost(context,newPost){
-        return axios.post("https://nuxt-blog-60810-default-rtdb.firebaseio.com/posts.json",newPost)
+        return axios.post("https://nuxt-blog-60810-default-rtdb.firebaseio.com/posts.json?auth=" + context.state.idToken ,newPost)
         .then(result => {
           context.commit('newPost', {...newPost, id : result.data.name})
         })        
@@ -41,6 +45,12 @@ const createStore = () => {
     getters:{
       getPost(state){
         return state.posts;
+      },
+      getToken(state){
+        return state.idToken;
+      },
+      isAuth(state){
+        return state.idToken != null;
       }
     }
   })

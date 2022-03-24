@@ -42,7 +42,8 @@ import axios from 'axios'
         .catch(error => console.log(error))
         console.log(newPost)
       }
-    }
+    },
+    middleware: 'authMiddleware'
   }
 </script>
 <style scoped>

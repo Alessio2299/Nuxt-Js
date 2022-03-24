@@ -1,6 +1,7 @@
 <template>
   <div class="w-full max-w-xs m-auto -mt-12 pb-10">
     <h2 class="text-white uppercase text-5xl pb-10">{{isLogin ? "Login" : "Sign in"}}</h2>
+    <p class="text-red-700 text-center" v-if="error != '' && (($store.state.idToken == null) || ($store.state.idToken == 'undefined'))">{{error}}</p>
     <form @keyup.enter="send()" class="relative bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <div v-if="!isLogin" class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
@@ -34,8 +35,8 @@
           <a v-if="isLogin" class="inline-block align-baseline font-bold text-sm text-black hover:text-gray-700" href="#">
             Forgot Password?
           </a>
-          <a v-if="isLogin" @click="isLogin = !isLogin" class="inline-block align-baseline font-bold text-sm text-black hover:text-gray-700" href="#">
-            Create new account
+          <a @click="isLogin = !isLogin" class="inline-block align-baseline font-bold text-sm text-black hover:text-gray-700" href="#">
+             {{isLogin ? "Create new account" : "Login"}}
           </a>
        </div>
       </div>
@@ -49,6 +50,7 @@
     name: 'Auth',
     data(){
       return{
+        error: "",
         isLogin: true,
         user:{
           email: "",
@@ -83,12 +85,13 @@
         }
         axios.post(urlAuth, body)
         .then(resp => {
-          console.log(resp.data.idToken)
-          console.log(body)
-          console.log(urlAuth)
+          this.$store.commit('setToken',resp.data.idToken);
+          this.$router.push('/admin');
         })
         .catch(error => { 
-          console.log(error)
+          this.error = error.response.data.error.message.replaceAll("_"," ");
+          console.log(this.$store.idToken);
+          console.log(this.error);
         })        
       }
     }

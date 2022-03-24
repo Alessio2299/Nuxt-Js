@@ -43,7 +43,7 @@
     methods:{
       editNewPost(newPost){
         this.loading = true;
-        axios.put(`https://nuxt-blog-60810-default-rtdb.firebaseio.com/posts/${this.$route.params.postid}.json`,newPost)
+        axios.put(`https://nuxt-blog-60810-default-rtdb.firebaseio.com/posts/${this.$route.params.postid}.json?auth=${this.$store.getters.getToken}`,newPost)
         .then(result => {
           console.log(result)
           this.loading = false;
@@ -55,7 +55,8 @@
         .catch(error => console.log(error))
         console.log(newPost)
       }
-    }
+    },
+    middleware: 'authMiddleware'
   }
 </script>
 <style scoped>

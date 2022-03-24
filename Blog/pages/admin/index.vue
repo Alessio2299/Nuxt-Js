@@ -27,7 +27,8 @@
       newPage(){
         this.$router.push('/admin/post/newPost');
       }
-    }
+    },
+    middleware: 'authMiddleware'
   }
 </script>
 <style scoped>
