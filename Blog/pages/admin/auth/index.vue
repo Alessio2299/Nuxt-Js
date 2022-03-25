@@ -85,7 +85,19 @@
         }
         axios.post(urlAuth, body)
         .then(resp => {
+          const token = resp.data.idToken;
+          const expiresIn = resp.data.expiresIn;
+          const tokenExpireIn = new Date().getTime() + Number.parseInt(expiresIn) * 1000;
           this.$store.commit('setToken',resp.data.idToken);
+          
+          // Save Token and tokenExpireIn for Client Side
+          localStorage.setItem('token', token);
+          localStorage.setItem('tokenExpireIn', tokenExpireIn);
+
+          // Save Token and tokenExpireIn for Server Side
+          this.$cookies.set('token', token);
+          this.$cookies.set('tokenExpireIn', tokenExpireIn);
+
           this.$router.push('/admin');
         })
         .catch(error => { 
