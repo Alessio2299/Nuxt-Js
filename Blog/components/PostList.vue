@@ -14,7 +14,7 @@
       />
     </div>
     <div v-else>
-      <span class="text-3xl">Non è presente nessun post</span>
+      <span class="pt-12 pl-5 block text-3xl">Non è presente nessun post</span>
     </div>
   </div>
 </template>

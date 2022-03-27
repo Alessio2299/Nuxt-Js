@@ -20,6 +20,7 @@
           </ul>
         </div>
         <div class="flex w-1/2 items-center justify-end content-center">
+              <nuxt-link v-if="this.$store.getters.getToken != null" class="text-white uppercase inline-block no-underline hover:text-gray py-2 px-2" to="/admin">Admin</nuxt-link>
               <nuxt-link v-if="this.$store.getters.getToken != null" class="text-white uppercase inline-block no-underline hover:text-gray py-2 px-2" to="/admin/auth/logout">Logout</nuxt-link>
               <nuxt-link v-if="this.$store.getters.getToken == null" class="text-white uppercase inline-block no-underline hover:text-gray py-2 px-2" to="/admin/auth">Login</nuxt-link>
           <a class="inline-block no-underline text-center h-10 p-2 md:h-auto md:p-4 avatar" target="_blank" href="https://github.com/Alessio2299">

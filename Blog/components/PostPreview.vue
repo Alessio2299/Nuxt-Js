@@ -4,7 +4,7 @@
       <nuxt-link :to="`/posts/${id}`" class="flex flex-wrap no-underline hover:no-underline">
         <img :src="thumbnail" :class="`my_img w-full rounded-t pb-6`">
         <div class="w-full font-bold text-xl text-gray-900 px-6">{{title}}</div>
-        <p class="text-gray-800 font-serif text-base px-6 mb-5">{{description}}</p>
+        <p class="my_description text-gray-800 font-serif text-base px-6 mb-5">{{description}}</p>
       </nuxt-link>
     </div>
     <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
@@ -64,6 +64,10 @@ export default {
 }
 </script>
 <style scoped>
+  .my_description{
+    max-height: 100px;
+    overflow: scroll;
+  }
   .my_img{
     height: 400px;
   }
