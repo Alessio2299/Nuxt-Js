@@ -10,16 +10,11 @@
 </template>
 
 <script>
-  import PostList from "~/components/PostList.vue"
-
   export default {
     name: 'IndexPage',
     data(){
       return{
       }
-    },
-    components:{
-      PostList
     }
   }
 </script>

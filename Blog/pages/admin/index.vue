@@ -17,12 +17,8 @@
 </template>
 
 <script>
-  import PostList from "../../components/PostList.vue"
   export default {
     name: 'Admin',
-    components:{
-      PostList 
-    },
     methods:{
       newPage(){
         this.$router.push('/admin/post/newPost');

@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-  import CreatePost from "~/components/NewPost/CreatePost.vue"
   export default {
     name: 'NewPost',
     data(){
@@ -23,9 +21,6 @@ import axios from 'axios'
         loading : false,
         save : false
       }
-    },
-    components:{
-      CreatePost
     },
     methods:{
       saveNewPost(newPost){

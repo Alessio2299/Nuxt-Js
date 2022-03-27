@@ -22,11 +22,6 @@
 <script>
 export default {
   name: 'PostPreview',
-  data(){
-    return{
-
-    }
-  },
   methods:{
     toEdit(id){
       this.$router.push(`/admin/post/${id}`);

@@ -30,11 +30,6 @@
   import axios from 'axios'
   export default {
     name: 'PostId',
-    data(){
-      return{
-
-      }
-    },
     asyncData(context){
       return axios.get(`https://nuxt-blog-60810-default-rtdb.firebaseio.com/posts/${context.params.id}.json`)
       
@@ -47,8 +42,6 @@
       .catch(error => {
         console.log(error);
       });
-    },
-    computed:{
     }
   }
 </script>

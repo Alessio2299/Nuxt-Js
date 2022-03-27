@@ -1,4 +1,4 @@
-import authMiddleware from "./middleware/authMiddleware";
+const env = require('dotenv').config();
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -28,6 +28,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~plugins/components.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

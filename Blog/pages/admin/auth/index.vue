@@ -58,8 +58,6 @@
         }
       }
     },
-    components:{
-    },
     methods:{
       send(){
         let urlAuth = process.env.urlAuth;

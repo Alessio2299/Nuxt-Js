@@ -1,5 +1,5 @@
 <template>
-  <aside v-if="show" class="bg-white w-1/3 mt-0">
+  <aside v-if="show" class="z-50 bg-white w-1/3 mt-0">
     <div class="nav-side">
       <div class="btn_close text-right">
         <i @click="$emit('close')" class="btn fas fa-times-circle"></i>
@@ -9,10 +9,16 @@
           <nuxt-link class="text-black inline-block py-2 px-2 no-underline hover:text-gray" to="/">HOME</nuxt-link>
         </li>
         <li class="mr-2">
-          <nuxt-link class="text-black inline-block no-underline hover:text-gray py-2 px-2" to="/post">POSTS</nuxt-link>
+          <nuxt-link class="text-black inline-block no-underline hover:text-gray py-2 px-2" to="/posts">POSTS</nuxt-link>
         </li>
         <li class="mr-2">
           <nuxt-link class="text-black inline-block no-underline hover:text-gray py-2 px-2" to="/about">ABOUT</nuxt-link>
+        </li>
+        <li class="mr-2" v-if="this.$store.getters.getToken != null">
+          <nuxt-link class="text-black inline-block no-underline hover:text-gray py-2 px-2" to="/admin/auth/logout">LOGOUT</nuxt-link>
+        </li>
+        <li class="mr-2" v-if="this.$store.getters.getToken == null">
+          <nuxt-link class="text-black inline-block no-underline hover:text-gray py-2 px-2" to="/admin/auth">LOGIN</nuxt-link>
         </li>
       </ul>
       <div class="w-1/2 mx-auto text-center">

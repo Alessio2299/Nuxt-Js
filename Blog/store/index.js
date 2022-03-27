@@ -16,7 +16,10 @@ const createStore = () => {
         state.posts.push(newPost);
       },
       setToken(state,idToken){
-        state.idToken = idToken
+        state.idToken = idToken;
+      },
+      clearToken(state){
+        state.Idtoken = null;
       }
     },
     actions:{

@@ -46,9 +46,6 @@
         }
       }
     },
-    components:{
-    },
-    
     methods:{
       cancel(){
         this.$router.push("/admin")

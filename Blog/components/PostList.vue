@@ -19,13 +19,9 @@
   </div>
 </template>
 <script>
-  import PostPreview from "~/components/PostPreview.vue"
 
   export default{
     name: "PostList",
-    components:{
-      PostPreview
-    },
     props:{
       type:{
         type: String,

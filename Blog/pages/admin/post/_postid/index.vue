@@ -15,7 +15,6 @@
 
 
 <script>
-  import CreatePost from "~/components/NewPost/CreatePost.vue"
   import axios from 'axios'
   export default {
     name: 'postId',
@@ -36,9 +35,6 @@
       .catch(error => {
         console.log(error);
       });
-    },
-    components:{
-      CreatePost
     },
     methods:{
       editNewPost(newPost){
